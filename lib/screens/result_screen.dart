@@ -52,12 +52,19 @@ class Result extends StatelessWidget {
                         fontSize: 100,
                         fontWeight: FontWeight.bold),
                   ),
-                  Text(setCaption,
-                      style: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.center),
+                  setCaption == 'Você está saudável'
+                      ? Text(setCaption,
+                          style: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.center)
+                      : Text(setCaption,
+                          style: const TextStyle(
+                              color: Color(0xFF860c17),
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.center)
                 ],
               ),
             ),
