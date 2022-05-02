@@ -30,8 +30,12 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 70,
         backgroundColor: const Color(0xFF9E9E9E),
-        title: const Text('IMC CALCULATOR'),
+        title: const Text(
+          'CALCULADORA DE IMC',
+          style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
       ),
       body: Column(
@@ -51,8 +55,10 @@ class _MainScreenState extends State<MainScreen> {
                           ? activeColorCard
                           : inactiveColorCard,
                       cardChild: const IconContent(
-                          icon: FontAwesomeIcons.mars,
-                          description: 'MASCULINO'),
+                        icon: FontAwesomeIcons.mars,
+                        description: 'MASCULINO',
+                        colorGender: Color(0xFF0084C4),
+                      ),
                     ),
                   ),
                 ),
@@ -68,8 +74,10 @@ class _MainScreenState extends State<MainScreen> {
                           ? activeColorCard
                           : inactiveColorCard,
                       cardChild: const IconContent(
-                          icon: FontAwesomeIcons.venus,
-                          description: 'FEMININO'),
+                        icon: FontAwesomeIcons.venus,
+                        description: 'FEMININO',
+                        colorGender: Color(0xFFff0F9B),
+                      ),
                     ),
                   ),
                 ),
@@ -109,7 +117,7 @@ class _MainScreenState extends State<MainScreen> {
                           ],
                         ),
                         Slider(
-                          activeColor: const Color(0xFFFF5822),
+                          activeColor: const Color(0xFF0084C4),
                           inactiveColor: const Color(0xFF8D8E98),
                           value: height.toDouble(),
                           min: 120,
@@ -141,7 +149,7 @@ class _MainScreenState extends State<MainScreen> {
                           style: TextStyle(fontSize: 20, color: Colors.black),
                         ),
                         Text(
-                          weight.toString(),
+                          weight.abs().toString(),
                           style: const TextStyle(
                             fontSize: 50,
                             fontWeight: FontWeight.bold,
@@ -194,7 +202,7 @@ class _MainScreenState extends State<MainScreen> {
                           style: TextStyle(fontSize: 20, color: Colors.black),
                         ),
                         Text(
-                          age.toString(),
+                          age.abs().toString(),
                           style: const TextStyle(
                             fontSize: 50,
                             fontWeight: FontWeight.bold,
@@ -258,12 +266,11 @@ class _MainScreenState extends State<MainScreen> {
               child: const Center(
                 child: Text(
                   'CALCULAR',
-                  style: TextStyle(fontSize: 25),
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
               ),
-              color: const Color(0xFFFF5822),
+              color: const Color(0xFF0084C4),
               margin: const EdgeInsets.only(top: 10),
-              padding: const EdgeInsets.only(bottom: 30),
               width: double.infinity,
               height: 80,
             ),

@@ -16,7 +16,12 @@ class Result extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('CALCULADORA DE IMC'),
+        toolbarHeight: 70,
+        title: const Text(
+          'CALCULADORA DE IMC',
+          style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -65,12 +70,11 @@ class Result extends StatelessWidget {
               child: const Center(
                 child: Text(
                   'RECALCULAR',
-                  style: TextStyle(fontSize: 25),
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
               ),
-              color: const Color(0xFFFF5822),
+              color: const Color(0xFF0084C4),
               margin: const EdgeInsets.only(top: 10),
-              padding: const EdgeInsets.only(bottom: 30),
               width: double.infinity,
               height: 80,
             ),

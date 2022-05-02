@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 
 class IconContent extends StatelessWidget {
-  const IconContent({Key? key, required this.icon, required this.description})
+  const IconContent(
+      {Key? key,
+      required this.icon,
+      required this.description,
+      required this.colorGender})
       : super(key: key);
   final IconData icon;
   final String description;
+  final Color colorGender;
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +19,7 @@ class IconContent extends StatelessWidget {
         Icon(
           icon,
           size: 95,
+          color: colorGender,
         ),
         const SizedBox(
           height: 15,

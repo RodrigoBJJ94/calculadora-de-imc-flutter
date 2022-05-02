@@ -11,26 +11,32 @@ class CalculatorIMC {
   }
 
   String getTitle() {
-    double imc = weight / (height * height);
+    double imc = weight / (height * height) * 10000;
 
-    if (imc > 25) {
-      return 'Acima do peso';
-    } else if (imc > 18.5) {
+    if (imc < 17) {
+      return 'Muito abaixo do peso';
+    } else if (imc >= 17 && imc < 18.5) {
+      return 'Ligeiramente abaixo do peso';
+    } else if (imc >= 18.5 && imc < 25) {
       return 'Peso normal';
+    } else if (imc >= 25 && imc < 30) {
+      return 'Ligeiramente acima do peso';
+    } else if (imc >= 30 && imc < 35) {
+      return 'Obesidade';
+    } else if (imc >= 35 && imc < 40) {
+      return 'Obesidade severa';
     } else {
-      return 'Abaixo de peso';
+      return 'Obesidade mórbida';
     }
   }
 
   String getCaption() {
-    double imc = weight / (height * height);
+    double imc = weight / (height * height) * 10000;
 
-    if (imc > 25) {
-      return 'Acima do peso';
-    } else if (imc > 18.5) {
-      return 'Peso normal';
+    if (imc >= 17 && imc < 30) {
+      return 'Você está saudável';
     } else {
-      return 'Abaixo de peso';
+      return 'Você não está saudável';
     }
   }
 }
